@@ -1,0 +1,22 @@
+Variable,Tipo,Descripción
+Country/Region,Dimensión,País o región geopolítica (clave principal)
+Province/State,Dimensión,Provincia o estado (desglose subnacional)
+WHO Region,Dimensión,Región de la OMS (6 grupos geográfico-políticos)
+Date,Dimensión,"Fecha de reporte (diaria, eje temporal)"
+Epidemic_Size,Dimensión,Cuartil de tamaño de epidemia (Bajo/Moderado/Alto/Crítico)
+Confirmed,Métrica base,Casos confirmados acumulados
+Deaths,Métrica base,Muertes acumuladas
+Recovered,Métrica base,Recuperados acumulados
+Active,Métrica base,Casos activos (Confirmed − Deaths − Recovered)
+New_Confirmed,Métrica base,Nuevos casos en el día (diferencia diaria)
+New_Deaths,Métrica base,Nuevas muertes en el día
+New_Recovered,Métrica base,Nuevos recuperados en el día
+CFR,Métrica derivada,Case Fatality Rate = Deaths/Confirmed × 100  → KPI 1
+Recovery_Rate,Métrica derivada,Tasa de Recuperación = Recovered/Confirmed × 100  → KPI 2
+Active_Rate,Métrica derivada,Tasa Activos = Active/Confirmed × 100  → KPI 3
+IMR,Métrica derivada,Índice Mortalidad Relativa = Deaths/Recovered × 100  → KPI 4
+Days_from_start,Métrica derivada,Días desde el primer caso global (timing)  → KPI 5
+MA7_New_Confirmed,Métrica derivada,Media móvil 7 días de nuevos confirmados  → KPI 6
+MA7_New_Deaths,Métrica derivada,Media móvil 7 días de nuevas muertes  → KPI 7
+CFR_daily,Métrica derivada,CFR diaria acumulada (evolución temporal)
+Recovery_Rate_daily,Métrica derivada,Tasa de recuperación diaria acumulada (evolución temporal)
