@@ -1,0 +1,114 @@
+{
+  "name": "COVID19 Professional Dark",
+  "dataColors": [
+    "#00B4D8",
+    "#E63946",
+    "#06D6A0",
+    "#FFB703",
+    "#7B2FBE",
+    "#FB8500"
+  ],
+  "background": "#0D1B2A",
+  "foreground": "#FFFFFF",
+  "tableAccent": "#00B4D8",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{"color": {"solid": {"color": "#112233"}}}],
+        "border": [{"color": {"solid": {"color": "#1E3A5F"}}}],
+        "fontColor": [{"color": {"solid": {"color": "#E0EAF4"}}}],
+        "title": [{
+          "fontColor": {"solid": {"color": "#FFFFFF"}},
+          "background": {"solid": {"color": "#0A1628"}},
+          "fontSize": 11,
+          "fontFamily": "Segoe UI Semibold",
+          "show": true
+        }]
+      }
+    },
+    "card": {
+      "*": {
+        "background": [{"color": {"solid": {"color": "#0A1F38"}}}],
+        "border": [{"color": {"solid": {"color": "#00B4D8"}}}],
+        "calloutValue": [{
+          "fontSize": 24,
+          "fontFamily": "Segoe UI Semibold",
+          "color": {"solid": {"color": "#00B4D8"}}
+        }],
+        "categoryLabels": [{
+          "fontSize": 9,
+          "color": {"solid": {"color": "#7FA8C9"}}
+        }]
+      }
+    },
+    "lineChart": {
+      "*": {
+        "background": [{"color": {"solid": {"color": "#0D1B2A"}}}],
+        "plotArea": [{"background": {"color": {"solid": {"color": "#0D1B2A"}}}, "transparency": 0}],
+        "categoryAxis": [{"fontColor": {"solid": {"color": "#7FA8C9"}}, "gridlineColor": {"solid": {"color": "#1E3A5F"}}}],
+        "valueAxis": [{"fontColor": {"solid": {"color": "#7FA8C9"}}, "gridlineColor": {"solid": {"color": "#1E3A5F"}}}]
+      }
+    },
+    "barChart": {
+      "*": {
+        "background": [{"color": {"solid": {"color": "#0D1B2A"}}}],
+        "categoryAxis": [{"fontColor": {"solid": {"color": "#7FA8C9"}}, "gridlineColor": {"solid": {"color": "#1E3A5F"}}}],
+        "valueAxis": [{"fontColor": {"solid": {"color": "#7FA8C9"}}, "gridlineColor": {"solid": {"color": "#1E3A5F"}}}]
+      }
+    },
+    "map": {
+      "*": {
+        "background": [{"color": {"solid": {"color": "#0D1B2A"}}}]
+      }
+    },
+    "donutChart": {
+      "*": {
+        "background": [{"color": {"solid": {"color": "#0D1B2A"}}}],
+        "legend": [{"fontColor": {"solid": {"color": "#7FA8C9"}}}]
+      }
+    },
+    "scatterChart": {
+      "*": {
+        "background": [{"color": {"solid": {"color": "#0D1B2A"}}}],
+        "categoryAxis": [{"fontColor": {"solid": {"color": "#7FA8C9"}}, "gridlineColor": {"solid": {"color": "#1E3A5F"}}}],
+        "valueAxis": [{"fontColor": {"solid": {"color": "#7FA8C9"}}, "gridlineColor": {"solid": {"color": "#1E3A5F"}}}]
+      }
+    },
+    "slicer": {
+      "*": {
+        "background": [{"color": {"solid": {"color": "#0A1628"}}}],
+        "border": [{"color": {"solid": {"color": "#1E3A5F"}}}],
+        "data": [{
+          "fontColor": {"solid": {"color": "#E0EAF4"}},
+          "background": {"solid": {"color": "#0A1628"}}
+        }],
+        "header": [{
+          "fontColor": {"solid": {"color": "#00B4D8"}},
+          "background": {"solid": {"color": "#0A1628"}}
+        }]
+      }
+    }
+  },
+  "textClasses": {
+    "callout": {
+      "fontSize": 45,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#00B4D8"
+    },
+    "title": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#FFFFFF"
+    },
+    "header": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#7FA8C9"
+    },
+    "label": {
+      "fontSize": 9,
+      "fontFace": "Segoe UI",
+      "color": "#7FA8C9"
+    }
+  }
+}
