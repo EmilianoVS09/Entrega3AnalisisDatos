@@ -197,6 +197,16 @@ svg.curve{width:100%;height:380px}
 .arrow.prev{left:24px}
 .arrow.next{right:24px}
 
+/* Speaker badge - indicador discreto del presentador asignado */
+.speaker-badge{position:fixed;top:20px;left:24px;z-index:100;display:flex;align-items:center;gap:8px;background:rgba(17,24,39,.85);padding:6px 12px;border-radius:20px;backdrop-filter:blur(8px);border:1px solid var(--grid);font-size:11px;color:var(--muted);letter-spacing:.05em}
+.speaker-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--primary)}
+.speaker-badge .who{color:var(--fg);font-weight:700}
+.speaker-badge .time{color:var(--muted);font-family:monospace}
+.speaker-badge.p1 .dot{background:#3b82f6}
+.speaker-badge.p2 .dot{background:#10b981}
+.speaker-badge.p3 .dot{background:#f59e0b}
+.speaker-badge.p4 .dot{background:#ef4444}
+
 /* Responsive */
 @media (max-width:1024px){
   .kpi-grid{grid-template-columns:repeat(3,1fr)}
@@ -209,6 +219,12 @@ svg.curve{width:100%;height:380px}
 </head>
 <body>
 
+<div class="speaker-badge p1" id="speaker-badge">
+  <span class="dot"></span>
+  <span class="who" id="speaker-who">Presentador 1</span>
+  <span class="time" id="speaker-time">0:30</span>
+</div>
+
 <div class="nav-info">
   <div>Use <kbd>&larr;</kbd> <kbd>&rarr;</kbd> para navegar</div>
   <div class="progress" id="progress">1 / 15</div>
@@ -217,7 +233,7 @@ svg.curve{width:100%;height:380px}
 <div class="deck" id="deck">
 
   <!-- SLIDE 1 - COVER -->
-  <section class="slide cover" data-slide="1">
+  <section class="slide cover" data-slide="1" data-speaker="1" data-time="0:30">
     <div class="virus"></div>
     <div class="eyebrow fade-up">Entrega 3 · Análisis de Datos · ITM 2026-1</div>
     <h1 class="fade-up d1">COVID-19</h1>
@@ -230,7 +246,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 2 - LAS 3 PREGUNTAS -->
-  <section class="slide" data-slide="2">
+  <section class="slide" data-slide="2" data-speaker="1" data-time="1:30">
     <div class="eyebrow fade-up">Fase 1 · Comprensión del problema</div>
     <h1 class="fade-up d1">Tres preguntas, una crisis global</h1>
     <p class="lead fade-up d2">Antes del análisis estadístico, antes del dashboard, formulamos las preguntas que guiarían toda la investigación. Cada una conecta con una hipótesis y un visual del dashboard final.</p>
@@ -254,7 +270,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 3 - LAS 2 HIPÓTESIS -->
-  <section class="slide" data-slide="3">
+  <section class="slide" data-slide="3" data-speaker="1" data-time="1:30">
     <div class="eyebrow fade-up">Fase 2 · Formulación de hipótesis</div>
     <h1 class="fade-up d1">Dos hipótesis para validar</h1>
     <p class="lead fade-up d2">Una se confirmó. La otra no. Ambos resultados son valiosos.</p>
@@ -285,7 +301,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 4 - MODELO ESTRELLA -->
-  <section class="slide" data-slide="4">
+  <section class="slide" data-slide="4" data-speaker="2" data-time="1:40">
     <div class="eyebrow fade-up">Fase 3 · Modelado de datos</div>
     <h1 class="fade-up d1">Esquema estrella</h1>
     <p class="lead fade-up d2">Una tabla de hechos, tres dimensiones, tres relaciones. La estructura mínima eficiente para un dashboard analítico.</p>
@@ -325,7 +341,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 5 - LOS 7 KPIS -->
-  <section class="slide" data-slide="5">
+  <section class="slide" data-slide="5" data-speaker="2" data-time="2:20">
     <div class="eyebrow fade-up">Fase 4 · Definición de KPIs</div>
     <h1 class="fade-up d1">Siete indicadores clave</h1>
     <p class="lead fade-up d2">Cada KPI vinculado a una hipótesis y a un umbral epidemiológico definido.</p>
@@ -374,7 +390,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 6 - ACTO I ASIA -->
-  <section class="slide acto-1" data-slide="6">
+  <section class="slide acto-1" data-slide="6" data-speaker="3" data-time="1:30">
     <div class="acto-num">I</div>
     <div class="eyebrow fade-up" style="color:var(--asia)">Acto I · El inicio silencioso</div>
     <h1 class="fade-up d1">Asia · enero 2020</h1>
@@ -397,7 +413,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 7 - ACTO II EUROPA -->
-  <section class="slide acto-2" data-slide="7">
+  <section class="slide acto-2" data-slide="7" data-speaker="3" data-time="1:30">
     <div class="acto-num">II</div>
     <div class="eyebrow fade-up" style="color:var(--europe)">Acto II · El tsunami</div>
     <h1 class="fade-up d1">Europa · marzo 2020</h1>
@@ -420,7 +436,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 8 - ACTO III AMERICAS -->
-  <section class="slide acto-3" data-slide="8">
+  <section class="slide acto-3" data-slide="8" data-speaker="3" data-time="1:30">
     <div class="acto-num">III</div>
     <div class="eyebrow fade-up" style="color:var(--americas)">Acto III · Sin plateau</div>
     <h1 class="fade-up d1">Américas · mayo–julio 2020</h1>
@@ -443,7 +459,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 9 - VALIDACIÓN H1 -->
-  <section class="slide" data-slide="9">
+  <section class="slide" data-slide="9" data-speaker="4" data-time="1:00">
     <div class="eyebrow fade-up">Fase 6 · Validación H1</div>
     <h1 class="fade-up d1">CFR media por región OMS</h1>
     <p class="lead fade-up d2">El gradiente es nítido. Europa duplica la letalidad de África. El ANOVA confirma que la diferencia no es aleatoria.</p>
@@ -500,7 +516,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 10 - VALIDACIÓN H2 -->
-  <section class="slide" data-slide="10">
+  <section class="slide" data-slide="10" data-speaker="4" data-time="1:00">
     <div class="eyebrow fade-up">Fase 6 · Validación H2</div>
     <h1 class="fade-up d1">Timing vs CFR · una sospecha sin sustento</h1>
     <p class="lead fade-up d2">La intuición decía que llegar tarde permite aprender. Los datos sugieren que sí, pero el efecto es tan pequeño que no alcanza significancia estadística.</p>
@@ -526,7 +542,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 11 - GINI -->
-  <section class="slide" data-slide="11">
+  <section class="slide" data-slide="11" data-speaker="4" data-time="0:45">
     <div class="eyebrow fade-up">Insight transversal</div>
     <h1 class="fade-up d1">Concentración extrema</h1>
     <p class="lead fade-up d2">El KPI 7 (Gini) revela algo que ningún visual aislado mostraba: la pandemia fue dramáticamente desigual.</p>
@@ -569,7 +585,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 12 - DECISIONES -->
-  <section class="slide" data-slide="12">
+  <section class="slide" data-slide="12" data-speaker="4" data-time="0:45">
     <div class="eyebrow fade-up">Fase 6 · Decisiones basadas en evidencia</div>
     <h1 class="fade-up d1">De los datos a las acciones</h1>
     <p class="lead fade-up d2">Cinco recomendaciones que se desprenden directamente de los hallazgos estadísticos.</p>
@@ -618,7 +634,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 13 - LIMITACIONES -->
-  <section class="slide" data-slide="13">
+  <section class="slide" data-slide="13" data-speaker="4" data-time="0:35">
     <div class="eyebrow fade-up">Fase 6 · Limitaciones</div>
     <h1 class="fade-up d1">Lo que estos datos no pueden decirnos</h1>
     <p class="lead fade-up d2">El rigor académico exige enumerar las limitaciones tan claramente como los hallazgos.</p>
@@ -633,7 +649,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 14 - CONCLUSIONES -->
-  <section class="slide" data-slide="14">
+  <section class="slide" data-slide="14" data-speaker="4" data-time="0:40">
     <div class="eyebrow fade-up">Cierre del análisis</div>
     <h1 class="fade-up d1">Tres conclusiones · una reflexión</h1>
     <div class="conc">
@@ -662,7 +678,7 @@ svg.curve{width:100%;height:380px}
   </section>
 
   <!-- SLIDE 15 - FIN -->
-  <section class="slide end" data-slide="15">
+  <section class="slide end" data-slide="15" data-speaker="4" data-time="0:15">
     <div class="eyebrow fade-up">Fin de la presentación</div>
     <h1 class="fade-up d1">Gracias.</h1>
     <p class="lead fade-up d2" style="text-align:center;max-width:700px">Repositorio · Notebooks Fase 1-6 · Dashboard Power BI · Documentación técnica</p>
@@ -671,6 +687,12 @@ svg.curve{width:100%;height:380px}
       Análisis de Datos · Ingeniería de Sistemas<br>
       Institución Universitaria ITM · 2026-1<br>
       <span style="color:var(--muted);font-size:.85rem;margin-top:8px;display:block">Docente: Daniel Alexis Nieto Mora</span>
+    </div>
+    <div class="fade-up d3" style="margin-top:1.5rem;display:grid;grid-template-columns:repeat(4,auto);gap:18px 28px;justify-content:center;font-size:.9rem;color:var(--fg)">
+      <div style="text-align:center"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#3b82f6;margin-right:6px"></span><strong>[Integrante 1]</strong></div>
+      <div style="text-align:center"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px"></span><strong>[Integrante 2]</strong></div>
+      <div style="text-align:center"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;margin-right:6px"></span><strong>[Integrante 3]</strong></div>
+      <div style="text-align:center"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;margin-right:6px"></span><strong>[Integrante 4]</strong></div>
     </div>
     <div class="fade-up d4" style="margin-top:3rem;padding:14px 24px;background:var(--bg-2);border-radius:30px;font-size:.85rem;color:var(--muted)">
       <span style="color:var(--green)">●</span> H1 confirmada · <span style="color:var(--amber)">○</span> H2 no confirmada · <span style="color:var(--primary)">◆</span> 7 KPIs · <span style="color:var(--accent)">▲</span> 8+ visualizaciones
@@ -698,6 +720,18 @@ slides.forEach((_,i) => {
   navContainer.appendChild(dot);
 });
 
+const speakerBadge = document.getElementById('speaker-badge');
+const speakerWho = document.getElementById('speaker-who');
+const speakerTime = document.getElementById('speaker-time');
+
+function updateSpeakerBadge(slide){
+  const sp = slide.dataset.speaker || '1';
+  const tm = slide.dataset.time || '';
+  speakerBadge.className = 'speaker-badge p' + sp;
+  speakerWho.textContent = 'Presentador ' + sp;
+  speakerTime.textContent = tm;
+}
+
 function goTo(i){
   if(i<0||i>=slides.length) return;
   slides[current].classList.remove('active');
@@ -710,8 +744,11 @@ function goTo(i){
   triggerCounters(slides[current]);
   // Trigger H2 scatter
   if(slides[current].dataset.slide === '10') drawScatter();
+  // Update speaker badge
+  updateSpeakerBadge(slides[current]);
 }
 slides[0].classList.add('active');
+updateSpeakerBadge(slides[0]);
 
 function triggerCounters(slide){
   slide.querySelectorAll('.counter').forEach(el => {
