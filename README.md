@@ -118,6 +118,8 @@ El Business Intelligence aplicado a datos epidemiológicos permite pasar de la d
 ---
 
 ## Estructura del repositorio
+
+```
 ENTREGA 3/
 ├── Dashboard/
 │   ├── pbicovid.pbix
@@ -144,6 +146,7 @@ ENTREGA 3/
 ├── recursos/
 ├── .gitignore
 └── README.md
+```
 ---
 
 *Proyecto desarrollado para la asignatura Análisis de Datos — ITM 2026-1*
